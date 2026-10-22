@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Roy Quick Real Estate | San Clemente Realtor®</title>
+<meta name="description" content="Roy Quick, Realtor® with LUXRE Realty in San Clemente. Serving all of Southern California, with a focus on investors and homes that didn't sell the first time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: alternating charcoal and bone bands, like a tailored suit with a gold tie bar.
+   Listings lead, expireds get their own band, Roy and LUXRE close it out. */
+:root{
+  color-scheme: light;
+  --ink:#121212;        /* near-black, logo black */
+  --char:#1c1c1e;       /* charcoal band */
+  --char-2:#26262a;     /* raised surface on charcoal */
+  --line-d:#3a3a3f;     /* rule on charcoal */
+  --bone:#f6f4ef;       /* warm white band */
+  --paper:#ffffff;
+  --line-l:#dedad1;     /* rule on bone */
+  --stone:#6d6a64;      /* muted text on bone */
+  --mist:#b8b5ae;       /* muted text on charcoal */
+  --gold:#c6a15b;       /* LUXRE-style gold */
+  --gold-deep:#9a7a3c;  /* gold text on light */
+  --display:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body:"Figtree", "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bone);color:var(--ink);font:400 17px/1.6 var(--body);margin:0}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(64px,9vw,112px)}
+.dark{background:var(--char);color:#f3f1ec}
+.ink{background:var(--ink);color:#f3f1ec}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+.dark .eyebrow,.ink .eyebrow{color:var(--gold)}
+h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(34px,4.6vw,56px);line-height:1.05}
+h3{font-size:24px;line-height:1.2}
+p{margin:0}
+.lede{font-size:19px;max-width:60ch;color:var(--stone)}
+.dark .lede,.ink .lede{color:var(--mist)}
+.head{display:grid;gap:16px;margin-bottom:48px;max-width:760px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 14px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:17px 26px;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:#d6b26c}
+.btn-line{border-color:currentColor;background:transparent;color:inherit}
+.btn-line:hover{background:#f3f1ec;color:var(--ink);border-color:#f3f1ec}
+.btn-dark{background:var(--ink);color:#f3f1ec}
+.btn-dark:hover{background:#000}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(18,18,18,.94);backdrop-filter:blur(8px);color:#f3f1ec;border-bottom:1px solid #2a2a2e}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:10px}
+.nav img{height:54px;width:auto}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font:500 14px/1 var(--body);letter-spacing:.06em}
+.nav ul a{text-decoration:none;color:var(--mist)}
+.nav ul a:hover{color:#fff}
+.nav .call{font:600 14px/1 var(--body);text-decoration:none;color:var(--gold);white-space:nowrap}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* hero */
+.hero{background:var(--ink);color:#f3f1ec;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:end;padding-block:clamp(48px,7vw,88px) 0}
+.hero-copy{display:grid;gap:24px;padding-bottom:clamp(48px,7vw,88px);min-width:0}
+.hero h1{font-size:clamp(44px,6.6vw,88px);line-height:.98}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero .lede{font-size:20px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+.creds{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;letter-spacing:.06em;color:var(--mist);border-top:1px solid var(--line-d);padding-top:20px;margin-top:8px}
+.portrait{position:relative;align-self:end;max-width:460px;justify-self:end;width:100%}
+.portrait img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%}
+.portrait::before{content:"";position:absolute;inset:28px -18px -1px 28px;border:1px solid var(--gold);z-index:0}
+.portrait img{position:relative;z-index:1}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.portrait{justify-self:start;max-width:380px}.hero-copy{padding-bottom:8px}}
+
+/* listings */
+.listings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+@media (max-width:760px){.listings{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line-l);display:grid;grid-template-rows:auto 1fr}
+.card-top{background:var(--char);color:#f3f1ec;padding:28px 28px 24px;display:grid;gap:14px;position:relative}
+.status{justify-self:start;font:700 11px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;padding:8px 12px;border:1px solid var(--gold);color:var(--gold)}
+.status.solid{background:var(--gold);color:var(--ink)}
+.card-top .city{font:500 italic clamp(30px,3.4vw,40px)/1 var(--display)}
+.card-top .addr{color:var(--mist);font-size:15px}
+.card-body{padding:24px 28px 28px;display:grid;gap:18px;align-content:start}
+.price{font:500 30px/1 var(--display);font-variant-numeric:tabular-nums}
+.price small{font:500 13px/1 var(--body);color:var(--stone);letter-spacing:.06em;margin-left:6px}
+.facts{display:flex;flex-wrap:wrap;gap:0;border-block:1px solid var(--line-l)}
+.facts div{padding:12px 18px 12px 0;margin-right:18px;font-size:14px;color:var(--stone)}
+.facts b{display:block;font:600 17px/1.2 var(--body);color:var(--ink);font-variant-numeric:tabular-nums}
+.card-body p{color:#3d3b37;font-size:16px}
+.card-body .btn{justify-self:start}
+.mls{font-size:12px;color:var(--stone);letter-spacing:.06em}
+.more{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin-top:40px;padding:28px 32px;border:1px solid var(--line-l);background:var(--paper)}
+.more p{font:500 22px/1.3 var(--display);max-width:40ch}
+
+/* expired */
+.reasons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.reasons{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.reasons{grid-template-columns:1fr}}
+.reason{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:8px;padding:22px 22px 24px;background:var(--char-2);border:1px solid var(--line-d);transition:border-color .2s,background .2s}
+.reason:hover{border-color:var(--gold)}
+.reason:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.reason[aria-pressed="true"]{border-color:var(--gold);background:#2e2a22}
+.reason strong{font:500 21px/1.2 var(--display);color:#fff}
+.reason span{font-size:14px;color:var(--mist);line-height:1.5}
+.reason[aria-pressed="true"] strong::after{content:"  ✓";color:var(--gold);font-family:var(--body);font-size:16px}
+
+.panel{margin-top:28px;background:var(--bone);color:var(--ink);padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,4vw,56px)}
+@media (max-width:860px){.panel{grid-template-columns:1fr}}
+.panel-intro{display:grid;gap:14px;align-content:start}
+.panel-intro h3{font-size:30px}
+.panel-intro p{color:var(--stone)}
+.picked{font:600 13px/1.4 var(--body);letter-spacing:.04em;color:var(--gold-deep)}
+
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.f{display:grid;gap:6px;min-width:0}
+.f.full{grid-column:1/-1}
+@media (max-width:560px){form{grid-template-columns:1fr}}
+label,.legend{font:600 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+input,select,textarea{font:400 16px/1.4 var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--line-l);padding:13px 14px;width:100%;border-radius:0}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,161,91,.25)}
+textarea{min-height:110px;resize:vertical}
+.choice{display:flex;flex-wrap:wrap;gap:10px}
+.choice label{display:flex;align-items:center;gap:8px;padding:12px 16px;border:1px solid var(--line-l);background:var(--paper);cursor:pointer;text-transform:none;letter-spacing:0;font:500 15px/1 var(--body);color:var(--ink)}
+.choice input{width:auto;accent-color:var(--gold-deep)}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.fine{font-size:12px;color:var(--stone);line-height:1.5;max-width:52ch}
+.err{color:#9b2c1f;font-size:14px}
+.thanks{grid-column:1/-1;display:grid;gap:12px;padding:28px;border:1px solid var(--gold);background:var(--paper)}
+.thanks h3{font-size:30px}
+
+.plan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line-d);border:1px solid var(--line-d);margin-top:72px}
+@media (max-width:860px){.plan{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.plan{grid-template-columns:1fr}}
+.plan div{background:var(--char);padding:26px 24px 28px;display:grid;gap:10px;align-content:start}
+.plan h3{font-size:21px;color:#fff}
+.plan p{color:var(--mist);font-size:15px}
+.plan .k{font:600 11px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.exit{margin-top:24px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;padding:28px 32px;border:1px solid var(--gold)}
+.exit .seal{font:500 italic 44px/1 var(--display);color:var(--gold)}
+.exit h3{color:#fff;font-size:26px;margin-bottom:6px}
+.exit p{color:var(--mist);max-width:70ch}
+@media (max-width:560px){.exit{grid-template-columns:1fr}}
+
+/* about */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,88px);align-items:start}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+.about figure{margin:0;position:relative;max-width:440px}
+.about figure img{aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;width:100%}
+.about figcaption{font-size:13px;color:var(--stone);margin-top:12px;letter-spacing:.04em}
+.about-copy{display:grid;gap:20px;min-width:0}
+.about-copy p{max-width:62ch;color:#33312d}
+.about-copy .big{font:400 italic clamp(24px,2.6vw,30px)/1.35 var(--display);color:var(--ink)}
+.values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 32px;margin-top:12px;padding-top:28px;border-top:1px solid var(--line-l)}
+@media (max-width:520px){.values{grid-template-columns:1fr}}
+.values h3{font-size:20px;margin-bottom:6px}
+.values p{font-size:15px;color:var(--stone)}
+
+/* luxre */
+.luxre{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+@media (max-width:860px){.luxre{grid-template-columns:1fr}}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-d);border:1px solid var(--line-d)}
+.stats div{background:var(--ink);padding:28px 24px;display:grid;gap:8px}
+.stats b{font:500 clamp(36px,4vw,50px)/1 var(--display);color:var(--gold);font-variant-numeric:tabular-nums}
+.stats span{font-size:14px;color:var(--mist)}
+.quote{border-left:1px solid var(--gold);padding-left:24px;display:grid;gap:10px}
+.quote p{font:400 italic 20px/1.5 var(--display);color:#ece9e2}
+.quote cite{font-style:normal;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px)}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+.reach{display:grid;gap:26px;align-content:start}
+.reach dl{display:grid;gap:18px;margin:0}
+.reach dt{font:600 12px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--stone);margin-bottom:6px}
+.reach dd{margin:0;font:500 20px/1.4 var(--display)}
+.reach dd a{text-decoration:none;border-bottom:1px solid var(--gold)}
+.social{display:flex;flex-wrap:wrap;gap:10px}
+.social a{font:600 13px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:12px 16px;border:1px solid var(--ink)}
+.social a:hover{background:var(--ink);color:#fff}
+
+.check{display:flex;gap:12px;align-items:flex-start;text-transform:none;letter-spacing:0;font:400 14px/1.5 var(--body);color:#3d3b37;cursor:pointer}
+.check input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--gold-deep)}
+.fine a{color:inherit}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--ink);padding:12px 16px;z-index:50;font-weight:600}
+.skip:focus{left:16px;top:16px}
+footer{background:var(--ink);color:var(--mist);font-size:13px;line-height:1.7}
+footer .wrap > div{display:grid;gap:10px}
+footer a{color:#f3f1ec}
+footer .wrap{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;padding-block:48px}
+footer img{height:96px;width:auto}
+footer p{max-width:80ch}
+footer strong{color:#f3f1ec;font-weight:600}
+@media (max-width:640px){footer .wrap{grid-template-columns:1fr}}
+</style>
+
+<meta property="og:title" content="Roy Quick Real Estate | San Clemente Realtor®">
+<meta property="og:description" content="Roy Quick, Realtor® with LUXRE Realty. Serving all of Southern California, with a focus on investors and homes that didn't sell the first time.">
+<meta property="og:image" content="https://roysoldquick.com/roy.jpg">
+<meta property="og:url" content="https://roysoldquick.com/">
+<link rel="icon" type="image/png" href="logo-dark.png">
+</head>
+<body>
+<a class="skip" href="#listings">Skip to main content</a>
+<header>
+  <div class="wrap nav">
+    <a href="#top" aria-label="Roy Quick Real Estate home"><img src="logo-light.png" alt="Roy Quick Real Estate"></a>
+    <ul>
+      <li><a href="#listings">Listings</a></li>
+      <li><a href="#expired">Expired Listings</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#luxre">LUXRE Realty</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="call" href="tel:+19804166412">980-416-6412</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">Roy Quick · Realtor® · LUXRE Realty</span>
+      <h1>Every home deserves <em>its next chapter.</em></h1>
+      <p class="lede">Based in San Clemente and serving all of Southern California. I work hard for homeowners, investors, and sellers whose home didn't sell the first time.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#expired">Why didn't my home sell?</a>
+        <a class="btn btn-line" href="#listings">See my listings</a>
+      </div>
+      <div class="creds"><span>CA DRE# 02417080</span><span>222 Avenida Del Mar, San Clemente</span><span>Easy-Exit Listing Agreement</span></div>
+    </div>
+    <div class="portrait"><img src="roy.jpg" alt="Roy Quick in a charcoal suit at the San Clemente Pier"></div>
+  </div>
+</section>
+
+<section class="band" id="listings">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Current listings</span>
+      <h2>Homes and opportunities I'm representing now</h2>
+      <p class="lede">From a 55+ retreat in San Jacinto to a development site near Downtown LA. Ask me about any of them and I'll get back to you the same day.</p>
+    </div>
+    <div class="listings">
+      <article class="card">
+        <div class="card-top">
+          <span class="status solid">Just listed</span>
+          <span class="city">Orange</span>
+          <span class="addr">2117 N Orange Olive Rd, Orange, CA 92865</span>
+        </div>
+        <div class="card-body">
+          <div class="price">$2,900,000</div>
+          <div class="facts"><div><b>±0.52</b>Acre lot</div><div><b>C-1</b>Zoning</div><div><b>2,109</b>Bldg sq ft</div><div><b>Income</b>In place</div></div>
+          <p>Own the land, the building, and the long-established Lighthouse Laundromat with all equipment. A 22,605 SF C-1 lot on high-traffic Orange Olive Rd with only about 9% lot coverage, wide frontage, a pylon sign, and a seller-reported drive-through entitlement. Ideal for a new pad, retail or office, coffee or QSR, or future development (buyer to verify with the City). Lease may be considered.</p>
+          <button class="btn btn-dark" data-ask="2117 N Orange Olive Rd, Orange">Ask about this property</button>
+          <span class="mls">MLS# OC26225226 · OC26225221</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="status">Price improved</span>
+          <span class="city">San Jacinto</span>
+          <span class="addr">772 Saint Alban Road, San Jacinto, CA 92583</span>
+        </div>
+        <div class="card-body">
+          <div class="price">$309,999</div>
+          <div class="facts"><div><b>2</b>Beds</div><div><b>2</b>Baths</div><div><b>1,503</b>Sq ft</div><div><b>2006</b>Built</div></div>
+          <p>Single-story home in Maravilla Estates, a gated 55+ community. Open floor plan, updated baths, indoor laundry, solar, and a 2-car attached garage.</p>
+          <button class="btn btn-dark" data-ask="772 Saint Alban Road, San Jacinto">Ask about this home</button>
+          <span class="mls">MLS# OC26215204</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="status">Investor opportunity</span>
+          <span class="city">Los Angeles</span>
+          <span class="addr">1272 W Court St, Los Angeles, CA 90026</span>
+        </div>
+        <div class="card-body">
+          <div class="price">$1,100,000 <small>1272 lot</small></div>
+          <div class="facts"><div><b>3</b>Lots available</div><div><b>±0.48</b>Acres combined</div><div><b>R4</b>Zoning</div></div>
+          <p>High-density R4 land just west of Downtown LA, with existing income and redevelopment potential. The 1272 lot is offered at $1.1M. Interested in all three lots (1272–1276)? Contact me for package pricing.</p>
+          <button class="btn btn-dark" data-ask="1272–1276 W Court St, Los Angeles">Request the package</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="status">Off-market</span>
+          <span class="city">Menifee</span>
+          <span class="addr">Quail Valley area, Menifee, CA 92587</span>
+        </div>
+        <div class="card-body">
+          <div class="price">Off-market</div>
+          <div class="facts"><div><b>2</b>Beds</div><div><b>1</b>Bath</div><div><b>884</b>Sq ft</div><div><b>0.11</b>Acre lot</div></div>
+          <p>Refreshed, move-in-ready home with a large backyard. Vacant, so a buyer can move in right away. Available quietly to serious buyers and investors.</p>
+          <button class="btn btn-dark" data-ask="Off-market home, Menifee">Ask about this home</button>
+        </div>
+      </article>
+    </div>
+    <div class="more">
+      <p>Looking for something else? Browse every listing from LUXRE Realty.</p>
+      <a class="btn btn-dark" href="https://luxrerealty.com/properties/sale" target="_blank" rel="noopener">View LUXRE listings</a>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="expired">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Expired &amp; cancelled listings</span>
+      <h2>Your home didn't sell. That doesn't mean it can't.</h2>
+      <p class="lede">Most homes come off the market for a reason that can be fixed. Pick what you think went wrong, and I'll reach out to talk through it.</p>
+    </div>
+
+    <div class="reasons" role="group" aria-label="Why didn't your home sell?">
+      <button class="reason" type="button" aria-pressed="false" data-reason="The price was too high"><strong>The price was off</strong><span>It sat while buyers chose homes that felt like better value.</span></button>
+      <button class="reason" type="button" aria-pressed="false" data-reason="Not enough showings"><strong>Too few showings</strong><span>Not enough buyers or agents came through the door.</span></button>
+      <button class="reason" type="button" aria-pressed="false" data-reason="Weak photos or marketing"><strong>Weak marketing</strong><span>The photos, video or online presence didn't do it justice.</span></button>
+      <button class="reason" type="button" aria-pressed="false" data-reason="My agent didn't communicate"><strong>Poor communication</strong><span>You rarely heard from your agent or didn't know the plan.</span></button>
+      <button class="reason" type="button" aria-pressed="false" data-reason="Offers fell through"><strong>Offers fell apart</strong><span>Buyers backed out, or escrow didn't close.</span></button>
+      <button class="reason" type="button" aria-pressed="false" data-reason="Not sure"><strong>I'm not sure</strong><span>You want an honest second opinion on what happened.</span></button>
+    </div>
+
+    <div class="panel" id="expired-panel">
+      <div class="panel-intro">
+        <h3>Tell me about your home</h3>
+        <p>I'll look at your listing history and what's sold around you, then call or email you, whichever you prefer. No pressure and no obligation.</p>
+        <p class="picked" id="picked">Choose a reason above, or just fill this in.</p>
+      </div>
+      <form id="expired-form" novalidate data-source="Website – Expired">
+        <div class="f"><label for="ex-name">Name</label><input id="ex-name" name="name" autocomplete="name" required></div>
+        <div class="f"><label for="ex-phone">Phone</label><input id="ex-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="f full"><label for="ex-email">Email</label><input id="ex-email" name="email" type="email" autocomplete="email"></div>
+        <div class="f full"><label for="ex-address">Property address</label><input id="ex-address" name="address" autocomplete="street-address" required></div>
+        <div class="f full"><span class="legend">Best way to reach you</span>
+          <div class="choice">
+            <label><input type="radio" name="contact_pref" value="Call me" checked> Set up a call</label>
+            <label><input type="radio" name="contact_pref" value="Email me"> Email me</label>
+            <label><input type="radio" name="contact_pref" value="Text me"> Text me</label>
+          </div>
+        </div>
+        <div class="f full"><label for="ex-msg">Anything else about your listing? <span style="text-transform:none;letter-spacing:0">(optional)</span></label><textarea id="ex-msg" name="message"></textarea></div>
+        <div class="f full"><label class="check" for="ex-sms"><input type="checkbox" id="ex-sms" name="sms_consent" value="yes"> <span>Yes, Roy Quick may text me about my property at the number above. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not required to work with me.</span></label></div>
+        <input type="hidden" name="reason" id="ex-reason">
+        <div class="hp" aria-hidden="true"><label for="ex-website">Leave this empty</label><input id="ex-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <div class="form-foot">
+          <button class="btn btn-gold" type="submit">Send to Roy</button>
+          <p class="fine">By sending this, you agree that Roy Quick may contact you by phone or email about your request. See the <a href="privacy.html">Privacy Policy</a>.</p>
+          <p class="err" id="ex-err" hidden></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="head" style="margin-top:96px;margin-bottom:0">
+      <span class="eyebrow">How I relist your home</span>
+      <h2>A fresh start, with a real plan behind it</h2>
+    </div>
+    <div class="plan">
+      <div><span class="k">Pricing</span><h3>A pricing and showing strategy</h3><p>A detailed look at what sold, what didn't, and why, so your home re-enters the market priced to draw buyers in.</p></div>
+      <div><span class="k">Presentation</span><h3>First-class photos and print</h3><p>Professional photography and printed materials. I invest in your listing up front, even though I'm not paid until closing.</p></div>
+      <div><span class="k">Marketing</span><h3>360° marketing</h3><p>Print, direct mail, digital and social media, plus my network of agents and investors before your home even hits the market.</p></div>
+      <div><span class="k">Exposure</span><h3>Expanded syndication</h3><p>Beyond the MLS, your home can be featured on outlets like the Wall Street Journal, Robb Report, Unique Homes and MarketWatch.</p></div>
+      <div><span class="k">Targeting</span><h3>Wealth-based buyer targeting</h3><p>We use Wealth Engine, drawing on over 100,000 data points, to put your home in front of qualified buyers.</p></div>
+      <div><span class="k">Online</span><h3>Your home's own website and video</h3><p>A single-property website that captures every interested buyer, plus a video feature on my YouTube channel.</p></div>
+      <div><span class="k">Reach</span><h3>International exposure</h3><p>Marketing to over 100 countries, including the international MLS.</p></div>
+      <div><span class="k">Negotiation</span><h3>Offers that close</h3><p>I vet buyers and their agents closely and dig into every offer, so you get the most money on terms that make it to the finish line.</p></div>
+      <div><span class="k">Savings</span><h3>Commission savings</h3><p>When I bring the buyer myself and represent both sides, I pass a commission discount on to you.</p></div>
+    </div>
+    <div class="exit">
+      <span class="seal">Easy exit</span>
+      <div><h3>Cancel anytime. No fees, no hard feelings.</h3><p>You've already been through one listing that didn't work. With my Easy-Exit Listing Agreement, if you're not happy with my service, you can cancel. I'd rather earn your business every week than lock you in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="about">
+  <div class="wrap about">
+    <figure>
+      <img src="roy.jpg" alt="Roy Quick smiling at the San Clemente Pier">
+      <figcaption>San Clemente Pier, my hometown beach.</figcaption>
+    </figure>
+    <div class="about-copy">
+      <span class="eyebrow">About Roy</span>
+      <h2>I've loved homes for as long as I can remember.</h2>
+      <p class="big">My goal in life is simple: to put smiles on people's faces, and to help them move from one chapter to the next.</p>
+      <p>I'm Roy Quick, a Realtor® with LUXRE Realty. I live and work in San Clemente and serve clients across Southern California. Before moving to the real estate side, I worked on the finance side of the transaction, so I understand how deals come together and where they can fall apart.</p>
+      <p>I believe there's never a bad time to be in real estate. Whether the market is up or down, people still need a trusted guide. I especially enjoy working with investors, and with homeowners whose listing didn't sell the first time around. Those are the clients who need someone willing to work harder and think differently.</p>
+      <p>I'm young, educated, and ready to do whatever it takes for my clients. I want to go above and beyond, and build relationships that last long after closing day.</p>
+      <div class="values">
+        <div><h3>Here to serve</h3><p>My faith shapes how I work: honesty, integrity, and putting others ahead of myself. You get those values whatever you believe.</p></div>
+        <div><h3>Your interests first</h3><p>I take my fiduciary duty seriously. Your goals come before my commission, every time.</p></div>
+        <div><h3>Always reachable</h3><p>You'll always know where things stand. I answer my phone and return every message.</p></div>
+        <div><h3>Relationships for life</h3><p>A closing is the start of a friendship, not the end of a transaction.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band ink" id="luxre">
+  <div class="wrap luxre">
+    <div style="display:grid;gap:24px">
+      <span class="eyebrow">My brokerage</span>
+      <h2>Backed by LUXRE Realty</h2>
+      <p class="lede">LUXRE Realty is a woman-owned boutique brokerage founded in Orange County in 2011, with offices on the coast in San Clemente and Huntington Beach. When you work with me, you get a full brokerage's experience and resources behind you.</p>
+      <div class="quote">
+        <p>“By staying ahead of the industry trends and embracing new technologies, we can continue to provide our clients with the best possible service.”</p>
+        <cite>Debra Gietter, Founder &amp; CEO</cite>
+      </div>
+    </div>
+    <div class="stats">
+      <div><b>$2B+</b><span>Total sales volume</span></div>
+      <div><b>2011</b><span>Founded in Orange County</span></div>
+      <div><b>2</b><span>Coastal offices: San Clemente &amp; Huntington Beach</span></div>
+      <div><b>LA · OC · SD</b><span>Areas of expertise across Southern California</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap contact">
+    <div class="reach">
+      <div style="display:grid;gap:16px"><span class="eyebrow">Contact</span><h2>Let's talk about your next move</h2></div>
+      <dl>
+        <div><dt>Call or text</dt><dd><a href="tel:+19804166412">980-416-6412</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:roy@roysoldquick.com">roy@roysoldquick.com</a></dd></div>
+        <div><dt>Office</dt><dd>222 Avenida Del Mar<br>San Clemente, CA 92672</dd></div>
+      </dl>
+      <div class="social">
+        <a href="https://www.instagram.com/roysoldquick/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61581441453609" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.youtube.com/@roysoldquick" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+    <form id="contact-form" novalidate data-source="roysoldquick.com" style="align-content:start">
+      <div class="f"><label for="c-name">Name</label><input id="c-name" name="name" autocomplete="name" required></div>
+      <div class="f"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="f full"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email"></div>
+      <div class="f full"><label for="c-type">I'm looking to</label>
+        <select id="c-type" name="looking_to">
+          <option>Sell</option><option>Buy</option><option>Relist an expired home</option><option>Invest</option><option>Other</option>
+        </select></div>
+      <div class="f full"><label for="c-address">Property address <span style="text-transform:none;letter-spacing:0">(if selling)</span></label><input id="c-address" name="address" autocomplete="street-address"></div>
+      <div class="f full"><label for="c-msg">How can I help?</label><textarea id="c-msg" name="message"></textarea></div>
+      <div class="f full"><label class="check" for="c-sms"><input type="checkbox" id="c-sms" name="sms_consent" value="yes"> <span>Yes, Roy Quick may text me about my real estate needs at the number above. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not required to work with me.</span></label></div>
+      <div class="hp" aria-hidden="true"><label for="c-website">Leave this empty</label><input id="c-website" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="form-foot">
+        <button class="btn btn-dark" type="submit">Send message</button>
+        <p class="fine">By sending this, you agree that Roy Quick may contact you by phone or email about your request. See the <a href="privacy.html">Privacy Policy</a>.</p>
+        <p class="err" id="c-err" hidden></p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="logo-light.png" alt="Roy Quick Real Estate">
+    <div>
+      <p><strong>Roy Quick, Realtor®</strong> · CA DRE# 02417080 · <strong>LUXRE Realty, Inc.</strong> · CA DRE# 01897290<br>222 Avenida Del Mar, San Clemente, CA 92672 · 980-416-6412 · roy@roysoldquick.com</p>
+      <p>All information deemed reliable but not guaranteed and should be independently verified. Listing details are subject to change and to prior sale. Roy Quick is a licensed real estate salesperson with LUXRE Realty, Inc., which is responsible for this advertising. We are pledged to the letter and spirit of U.S. policy for the achievement of equal housing opportunity. Equal Housing Opportunity.</p>
+      <p><a href="privacy.html">Privacy Policy &amp; Terms</a> · <a href="privacy.html#accessibility">Accessibility</a> · © 2026 Roy Quick Real Estate</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// At launch, set this to the Zapier webhook that creates the lead in Follow Up Boss.
+const LEAD_WEBHOOK = "https://hooks.zapier.com/hooks/catch/29074296/41iv8as/";
+
+const reasonBtns = document.querySelectorAll(".reason");
+const picked = document.getElementById("picked");
+const reasonInput = document.getElementById("ex-reason");
+reasonBtns.forEach(b => b.addEventListener("click", () => {
+  reasonBtns.forEach(x => x.setAttribute("aria-pressed", "false"));
+  b.setAttribute("aria-pressed", "true");
+  reasonInput.value = b.dataset.reason;
+  picked.textContent = "You picked: " + b.querySelector("strong").textContent;
+  document.getElementById("expired-panel").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
+  setTimeout(() => document.getElementById("ex-name").focus({preventScroll:true}), 400);
+}));
+
+document.querySelectorAll("[data-ask]").forEach(b => b.addEventListener("click", () => {
+  document.getElementById("c-type").value = "Buy";
+  document.getElementById("c-msg").value = "I'd like more information about " + b.dataset.ask + ".";
+  document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+  setTimeout(() => document.getElementById("c-name").focus({preventScroll:true}), 400);
+}));
+
+function handle(form, errId) {
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const err = document.getElementById(errId);
+    const d = Object.fromEntries(new FormData(form));
+    const problems = [];
+    if (!d.name.trim()) problems.push("your name");
+    if (!d.phone.trim() && !d.email.trim()) problems.push("a phone number or email");
+    if (form.id === "expired-form" && !d.address.trim()) problems.push("the property address");
+    if (problems.length) { err.textContent = "Please add " + problems.join(" and ") + " so I can reach you."; err.hidden = false; return; }
+    if (d.contact_pref === "Text me" && (!d.sms_consent || !d.phone.trim())) { err.textContent = "To be texted, please add your phone number and check the texting box."; err.hidden = false; return; }
+    err.hidden = true;
+    const textOk = d.sms_consent === "yes" && d.phone.trim();
+    if (d.website) { form.replaceChildren(); return; }
+    const parts = d.name.trim().split(/\s+/);
+    const isExpired = form.id === "expired-form";
+    const lines = [];
+    if (isExpired) lines.push("Why didn't my home sell? " + (d.reason || "Not chosen"), "Best way to reach: " + d.contact_pref);
+    else lines.push("Looking to: " + d.looking_to);
+    if (d.address && d.address.trim()) lines.push("Property: " + d.address.trim());
+    if (d.message && d.message.trim()) lines.push("Message: " + d.message.trim());
+    lines.push(textOk ? "Text consent: YES, checked the texting box on " + new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"}) + " PT" : "Text consent: NO, do not text");
+    const payload = {
+      first_name: parts[0], last_name: parts.slice(1).join(" "),
+      email: d.email.trim(), phone: d.phone.trim(), address: (d.address || "").trim(),
+      source: "roysoldquick.com",
+      tags: isExpired ? "Website - Expired" : "Website - " + d.looking_to,
+      summary: lines.join("\n"), page: location.href
+    };
+    if (LEAD_WEBHOOK) { try { await fetch(LEAD_WEBHOOK, {method:"POST", mode:"no-cors", body: new URLSearchParams(payload)}); } catch (_) {} }
+    const first = d.name.trim().split(" ")[0];
+    const box = document.createElement("div");
+    box.className = "thanks";
+    box.setAttribute("role", "status");
+    box.innerHTML = "<h3></h3><p></p>";
+    box.querySelector("h3").textContent = "Thank you, " + first + ".";
+    box.querySelector("p").textContent = form.id === "expired-form"
+      ? "I've got your information and I'll contact you shortly to talk about your home. — Roy"
+      : "Your message is on its way. I'll contact you shortly. — Roy";
+    form.replaceChildren(box);
+  });
+}
+handle(document.getElementById("expired-form"), "ex-err");
+handle(document.getElementById("contact-form"), "c-err");
+</script>
+
+</body>
+</html>
