@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Roy Quick Market Updates</title>
+  <link>https://roysoldquick.com/market-updates/</link>
+  <atom:link href="https://roysoldquick.com/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Weekly San Clemente, Dana Point and South Orange County real estate market updates from Roy Quick, Realtor® with LUXRE Realty.</description>
+  <language>en-us</language>
+  <item>
+    <title>San Clemente Housing Market Update: October 2026</title>
+    <link>https://roysoldquick.com/market-updates/san-clemente-housing-market-update-october-2026/</link>
+    <guid isPermaLink="true">https://roysoldquick.com/market-updates/san-clemente-housing-market-update-october-2026/</guid>
+    <pubDate>Mon, 26 Oct 2026 12:00:00 -0700</pubDate>
+    <author>roy@roysoldquick.com (Roy Quick)</author>
+    <description>San Clemente home prices rose about 4% year over year while inventory tightened, Dana Point jumped 16.6%, and rates sit near 7.3%. Roy Quick breaks down what it means for South OC sellers, landlords and investors.</description>
+    <enclosure url="https://images.unsplash.com/photo-1586174274488-97262f49b7e2?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" type="image/jpeg" length="0"/>
+  </item>
+</channel>
+</rss>
