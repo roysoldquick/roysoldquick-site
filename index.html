@@ -3,8 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Roy Quick Real Estate | San Clemente Realtor®</title>
-<meta name="description" content="Roy Quick, Realtor® with LUXRE Realty in San Clemente. Serving all of Southern California, with a focus on investors and homes that didn't sell the first time.">
+<title>Roy Quick | San Clemente Realtor® | South OC Home Sellers &amp; Investors</title>
+<meta name="description" content="Roy Quick, Realtor® with LUXRE Realty in San Clemente, CA. Helping homeowners in San Clemente, Dana Point and South Orange County sell or lease, plus investors and expired listings. Call 980-416-6412.">
+<link rel="canonical" href="https://roysoldquick.com/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="geo.region" content="US-CA">
+<meta name="geo.placename" content="San Clemente">
+<link rel="alternate" type="application/rss+xml" title="Roy Quick Market Updates" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Figtree:wght@400;500;600;700&display=swap">
@@ -55,6 +60,19 @@ p{margin:0}
 .btn-line:hover{background:#f3f1ec;color:var(--ink);border-color:#f3f1ec}
 .btn-dark{background:var(--ink);color:#f3f1ec}
 .btn-dark:hover{background:#000}
+
+/* market updates cards (generated block, see scripts/build.py) */
+#market-updates .posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media (max-width:960px){#market-updates .posts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){#market-updates .posts{grid-template-columns:1fr}}
+.pcard{background:var(--paper);border:1px solid var(--line-l);display:grid;grid-template-rows:auto 1fr;text-decoration:none;transition:border-color .2s,transform .2s}
+.pcard:hover{border-color:var(--gold);transform:translateY(-2px)}
+.pcard .ph{aspect-ratio:16/10;overflow:hidden;background:var(--char)}
+.pcard .ph img{width:100%;height:100%;object-fit:cover}
+.pcard .pb{padding:22px 24px 26px;display:grid;gap:10px;align-content:start}
+.pcard h3{font-size:23px;line-height:1.2}
+.pcard p{color:var(--stone);font-size:15px;line-height:1.55}
+.pcard .meta{font:600 11px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep)}
 
 /* header */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(18,18,18,.94);backdrop-filter:blur(8px);color:#f3f1ec;border-bottom:1px solid #2a2a2e}
@@ -204,11 +222,66 @@ footer strong{color:#f3f1ec;font-weight:600}
 @media (max-width:640px){footer .wrap{grid-template-columns:1fr}}
 </style>
 
-<meta property="og:title" content="Roy Quick Real Estate | San Clemente Realtor®">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roy Quick Real Estate">
+<meta property="og:title" content="Roy Quick | San Clemente Realtor® with LUXRE Realty">
 <meta property="og:description" content="Roy Quick, Realtor® with LUXRE Realty. Serving all of Southern California, with a focus on investors and homes that didn't sell the first time.">
 <meta property="og:image" content="https://roysoldquick.com/roy.jpg">
 <meta property="og:url" content="https://roysoldquick.com/">
 <link rel="icon" type="image/png" href="logo-dark.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://roysoldquick.com/roy.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "RealEstateAgent",
+   "@id": "https://roysoldquick.com/#roy",
+   "name": "Roy Quick",
+   "alternateName": "Roy Quick Real Estate",
+   "description": "Roy Quick is a Realtor® with LUXRE Realty in San Clemente, CA, helping South Orange County homeowners sell or lease their homes, working with real estate investors, and relisting homes that didn't sell the first time.",
+   "url": "https://roysoldquick.com/",
+   "image": "https://roysoldquick.com/roy.jpg",
+   "logo": "https://roysoldquick.com/logo-dark.png",
+   "telephone": "+1-980-416-6412",
+   "email": "roy@roysoldquick.com",
+   "address": {"@type": "PostalAddress", "streetAddress": "222 Avenida Del Mar", "addressLocality": "San Clemente", "addressRegion": "CA", "postalCode": "92672", "addressCountry": "US"},
+   "geo": {"@type": "GeoCoordinates", "latitude": 33.4270, "longitude": -117.6120},
+   "areaServed": [
+    {"@type": "City", "name": "San Clemente, CA"},
+    {"@type": "City", "name": "Dana Point, CA"},
+    {"@type": "Place", "name": "Capistrano Beach, CA"},
+    {"@type": "City", "name": "San Juan Capistrano, CA"},
+    {"@type": "City", "name": "Laguna Niguel, CA"},
+    {"@type": "AdministrativeArea", "name": "Orange County, CA"},
+    {"@type": "AdministrativeArea", "name": "Southern California"}
+   ],
+   "knowsAbout": ["Selling a home", "Leasing a home", "Real estate investing", "Expired listings", "San Clemente real estate", "Dana Point real estate", "South Orange County housing market"],
+   "parentOrganization": {"@type": "RealEstateAgent", "name": "LUXRE Realty, Inc.", "url": "https://luxrerealty.com/"},
+   "sameAs": ["https://www.instagram.com/roysoldquick/", "https://www.youtube.com/@roysoldquick", "https://www.facebook.com/profile.php?id=61581441453609", "https://linktr.ee/roysoldquick"]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://roysoldquick.com/#person",
+   "name": "Roy Quick",
+   "jobTitle": "Realtor®",
+   "url": "https://roysoldquick.com/",
+   "image": "https://roysoldquick.com/roy.jpg",
+   "worksFor": {"@type": "RealEstateAgent", "name": "LUXRE Realty, Inc.", "url": "https://luxrerealty.com/"},
+   "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "California DRE Salesperson License #02417080"},
+   "sameAs": ["https://www.instagram.com/roysoldquick/", "https://www.youtube.com/@roysoldquick", "https://www.facebook.com/profile.php?id=61581441453609", "https://linktr.ee/roysoldquick"]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://roysoldquick.com/#website",
+   "name": "Roy Quick Real Estate",
+   "url": "https://roysoldquick.com/",
+   "publisher": {"@id": "https://roysoldquick.com/#roy"}
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#listings">Skip to main content</a>
@@ -218,6 +291,7 @@ footer strong{color:#f3f1ec;font-weight:600}
     <ul>
       <li><a href="#listings">Listings</a></li>
       <li><a href="#expired">Expired Listings</a></li>
+      <li><a href="/market-updates/">Market Updates</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#luxre">LUXRE Realty</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -408,6 +482,29 @@ footer strong{color:#f3f1ec;font-weight:600}
   </div>
 </section>
 
+<!-- LATEST_POSTS_START -->
+<section class="band" id="market-updates" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Market updates</span>
+      <h2>What's happening in the South OC market</h2>
+      <p class="lede">A new update every Monday on San Clemente, Dana Point, Capistrano Beach and Orange County, with the numbers and sources behind it.</p>
+    </div>
+    <div class="posts">
+<a class="pcard" href="/market-updates/san-clemente-housing-market-update-october-2026/">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1586174274488-97262f49b7e2?auto=format&amp;fit=crop&amp;w=800&amp;q=75" alt="The San Clemente Pier at sunset with palm trees in silhouette" loading="lazy" width="800" height="500"></div>
+  <div class="pb">
+    <span class="meta">October 26, 2026 · 5 min read</span>
+    <h3>San Clemente Housing Market Update: October 2026</h3>
+    <p>San Clemente home prices rose about 4% year over year while inventory tightened, Dana Point jumped 16.6%, and rates sit near 7.3%. Roy Quick breaks down what it means for South OC sellers, landlords and investors.</p>
+  </div>
+</a>
+    </div>
+    <div class="more"><p>Read every weekly update, or ask me what it means for your home.</p><a class="btn btn-dark" href="/market-updates/">All market updates</a></div>
+  </div>
+</section>
+<!-- LATEST_POSTS_END -->
+
 <section class="band ink" id="luxre">
   <div class="wrap luxre">
     <div style="display:grid;gap:24px">
@@ -471,7 +568,7 @@ footer strong{color:#f3f1ec;font-weight:600}
     <div>
       <p><strong>Roy Quick, Realtor®</strong> · CA DRE# 02417080 · <strong>LUXRE Realty, Inc.</strong> · CA DRE# 01897290<br>222 Avenida Del Mar, San Clemente, CA 92672 · 980-416-6412 · roy@roysoldquick.com</p>
       <p>All information deemed reliable but not guaranteed and should be independently verified. Listing details are subject to change and to prior sale. Roy Quick is a licensed real estate salesperson with LUXRE Realty, Inc., which is responsible for this advertising. We are pledged to the letter and spirit of U.S. policy for the achievement of equal housing opportunity. Equal Housing Opportunity.</p>
-      <p><a href="privacy.html">Privacy Policy &amp; Terms</a> · <a href="privacy.html#accessibility">Accessibility</a> · © 2026 Roy Quick Real Estate</p>
+      <p><a href="/market-updates/">Market Updates</a> · <a href="privacy.html">Privacy Policy &amp; Terms</a> · <a href="privacy.html#accessibility">Accessibility</a> · © 2026 Roy Quick Real Estate</p>
     </div>
   </div>
 </footer>

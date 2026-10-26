@@ -1,0 +1,39 @@
+# Static site: pages are pre-built by scripts/build.py and committed, so Netlify
+# publishes the repo root as is. No build step needed.
+[build]
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from = "/blog"
+  to = "/market-updates/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/market-updates/:splat"
+  status = 301
+
+# Keep source files and tooling off the public site.
+[[redirects]]
+  from = "/content/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/scripts/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
