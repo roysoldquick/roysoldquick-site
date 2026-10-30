@@ -7,7 +7,7 @@ Monday at 12:00 noon Pacific. This guide is the brief for whoever writes it, hum
 
 1. **Draft** (Friday): research, write the post in `content/posts/`, keep `"draft": true`,
    run `python3 scripts/build.py --drafts` to check it renders, push to a `draft/<slug>`
-   branch, and email the full draft to roy@roysoldquick.com with the subject
+   branch, and email the full draft (`python3 scripts/draft_email.py <post file>` prints the email HTML) to roy@roysoldquick.com with the subject
    `Market Update draft for <Monday date>: reply "post it" to approve`.
 2. **Approval**: Roy replies "post it" (or sends edits). Apply any edits he asks for.
 3. **Publish** (Monday 12:00 PT): only if Roy approved, set `"draft": false`, run
