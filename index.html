@@ -117,6 +117,13 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rg
 .card-body p{color:#3d3b37;font-size:16px}
 .card-body .btn{justify-self:start}
 .mls{font-size:12px;color:var(--stone);letter-spacing:.06em}
+.group-head{display:flex;align-items:center;gap:18px;margin:0 0 22px;font:700 12px/1 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
+.group-head::after{content:"";flex:1;height:1px;background:var(--line-l)}
+.group-head .count{color:var(--gold);letter-spacing:.06em}
+.group-closed{margin-top:56px}
+.status.closed{background:#f3f1ec;border-color:#f3f1ec;color:var(--ink)}
+.card.closed .card-top{background:var(--ink)}
+.card.closed .card-top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--gold)}
 .more{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin-top:40px;padding:28px 32px;border:1px solid var(--line-l);background:var(--paper)}
 .more p{font:500 22px/1.3 var(--display);max-width:40ch}
 
@@ -320,10 +327,11 @@ footer strong{color:#f3f1ec;font-weight:600}
 <section class="band" id="listings">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">Current listings</span>
-      <h2>Homes and opportunities I'm representing now</h2>
+      <span class="eyebrow">Listings</span>
+      <h2>Active listings and recent closings</h2>
       <p class="lede">From a 55+ retreat in San Jacinto to a development site near Downtown LA. Ask me about any of them and I'll get back to you the same day.</p>
     </div>
+    <h3 class="group-head">Active <span class="count">3</span></h3>
     <div class="listings">
       <article class="card">
         <div class="card-top">
@@ -368,20 +376,24 @@ footer strong{color:#f3f1ec;font-weight:600}
           <button class="btn btn-dark" data-ask="1272–1276 W Court St, Los Angeles">Request the package</button>
         </div>
       </article>
-
-      <article class="card">
-        <div class="card-top">
-          <span class="status">Off-market</span>
-          <span class="city">Menifee</span>
-          <span class="addr">Quail Valley area, Menifee, CA 92587</span>
-        </div>
-        <div class="card-body">
-          <div class="price">Off-market</div>
-          <div class="facts"><div><b>2</b>Beds</div><div><b>1</b>Bath</div><div><b>884</b>Sq ft</div><div><b>0.11</b>Acre lot</div></div>
-          <p>Refreshed, move-in-ready home with a large backyard. Vacant, so a buyer can move in right away. Available quietly to serious buyers and investors.</p>
-          <button class="btn btn-dark" data-ask="Off-market home, Menifee">Ask about this home</button>
-        </div>
-      </article>
+    </div>
+    <div class="group-closed">
+      <h3 class="group-head">Closed <span class="count">1</span></h3>
+      <div class="listings">
+        <article class="card closed">
+          <div class="card-top">
+            <span class="status closed">Closed</span>
+            <span class="city">Menifee</span>
+            <span class="addr">Quail Valley area, Menifee, CA 92587</span>
+          </div>
+          <div class="card-body">
+            <div class="price">Closed <small>Lease · Oct 2026</small></div>
+            <div class="facts"><div><b>2</b>Beds</div><div><b>1</b>Bath</div><div><b>884</b>Sq ft</div><div><b>0.11</b>Acre lot</div></div>
+            <p>Represented the owner and placed a qualified tenant in this refreshed, move-in-ready home with a large backyard. Thinking about selling or leasing yours? I'll run the numbers both ways for you.</p>
+            <button class="btn btn-dark" data-ask="Selling or leasing my home" data-type="Sell" data-msg="I'd like to talk about selling or leasing my home.">Talk to me about your home</button>
+          </div>
+        </article>
+      </div>
     </div>
     <div class="more">
       <p>Looking for something else? Browse every listing from LUXRE Realty.</p>
@@ -598,8 +610,8 @@ reasonBtns.forEach(b => b.addEventListener("click", () => {
 }));
 
 document.querySelectorAll("[data-ask]").forEach(b => b.addEventListener("click", () => {
-  document.getElementById("c-type").value = "Buy";
-  document.getElementById("c-msg").value = "I'd like more information about " + b.dataset.ask + ".";
+  document.getElementById("c-type").value = b.dataset.type || "Buy";
+  document.getElementById("c-msg").value = b.dataset.msg || ("I'd like more information about " + b.dataset.ask + ".");
   document.getElementById("contact").scrollIntoView({behavior:"smooth"});
   setTimeout(() => document.getElementById("c-name").focus({preventScroll:true}), 400);
 }));
